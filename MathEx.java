@@ -5,7 +5,12 @@ public class MathEx{
         System.out.println(swap(123456));
         timeLeft(1,15,4,36);
         timeLeft(1,34,8,20);
-        dayOfWeek(0,1);
+        System.out.println(dayOfWeek(0,1));
+        System.out.println(dayOfWeek(0,14));
+        System.out.println(dayOfWeek(6,22));
+        System.out.println(dayOfWeek(5,4));
+        System.out.println(dayOfWeek(1,24));
+        System.out.println(dayOfWeek(2,1));
     }
 
         public static int swap(int x){
@@ -25,7 +30,8 @@ public class MathEx{
     }
 
 public static int dayOfWeek(int januaryFirst, int day){
-    answer = day%7+1+day;
+    int stepOne = (day+6)%7 + januaryFirst;
+    int answer = stepOne - stepOne/7*7; 
     return answer;
 }
 
