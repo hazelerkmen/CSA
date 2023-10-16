@@ -17,7 +17,6 @@ public class PollDisplayPanel extends JPanel
   private int count2;
   private int count3;
 
-  //________________________________________________________
 
   //constructor
   public PollDisplayPanel(String nm1, String nm2, String nm3)
@@ -26,9 +25,9 @@ public class PollDisplayPanel extends JPanel
     name1 = nm1;
     name2 = nm2;
     name3 = nm3;
-    count1 = 0;   // optional
-    count2 = 0;   // optional
-    count3 = 0;   // optional
+    //count1 = 0;   // optional
+    //count2 = 0;   // optional
+    //count3 = 0;   // optional
   }
 
   // Increments count1
@@ -53,7 +52,8 @@ public class PollDisplayPanel extends JPanel
   public String toString()
   {
 	// create a string here that looks like: Tam1 : 1 Brian : 2 Liz : 0
-    return  "";
+    String s = "Tami : " + count1 + " Brian : " + count2 + " Liz : " + count3;
+    return s;
   }
 
   // Redefines JPanel's paintComponent to draw this pie chart
@@ -91,10 +91,16 @@ public class PollDisplayPanel extends JPanel
       g.setColor(Color.RED);
       degrees = countToDegrees(count1, total);
       drawSector(g, x, y, r, fromDegree, degrees);
+      fromDegree += degrees;
 
-      //_________________________________________________
+      g.setColor(Color.GREEN);
+      degrees = countToDegrees(count2, total);
+      drawSector(g, x, y, r, fromDegree, degrees);
+      fromDegree += degrees;
 
-      //...
+      g.setColor(Color.BLUE);
+      degrees = Math.max(360 - fromDegree, 0);
+      drawSector(g, x, y, r, fromDegree, degrees);
     }
     else
     {
@@ -110,11 +116,11 @@ public class PollDisplayPanel extends JPanel
     y += (r + 20);
     g.setColor(Color.BLACK);
 
-    //g.drawString( _______________ , x - r, y);
+    g.drawString( ""+ count1 , x - r, y);
 
-    //g.drawString( _______________ , x, y);
+    g.drawString( "" + count2 , x, y);
 
-    //g.drawString( _______________ , x + r, y);
+    g.drawString( "" + count3 , x + r, y);
 
 
     // Display the color squares:
@@ -131,10 +137,10 @@ public class PollDisplayPanel extends JPanel
   // Returns the number of degrees in a pie slice that
   // corresponds to count / total, rounded to the nearest integer.
   private int countToDegrees(int count, int total)
-  {
-  //____________________________________________________
-
-    return 0;
+  { 
+    double ratio = (double) count / total;
+    double angle = ratio * 360;
+    return (int) angle;
   }
 
 
