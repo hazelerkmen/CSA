@@ -1,10 +1,5 @@
 public class CondEx{
-    private int imNotSure;
-
-    public CondEx(){
-    imNotSure = 0;
-    }
-
+    
     public boolean isLeapYear(int year){
         if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
             return true;
@@ -62,12 +57,21 @@ public class CondEx{
     }
 
     public boolean makeBenches(int small, int big, int goal){
-        if (5 * big >= goal){
+        int bigTotal = 5 * big;
+
+        if (bigTotal == goal){
             return true;
         }
-        if (5 * big + small >= goal){
+        if (bigTotal + small == goal){
             return true;
         }
+        if (bigTotal > goal && goal%5 == 0){
+            return true;
+        }
+        if (bigTotal > goal && goal%5 <= small){
+            return true;
+        }
+        if (bigtotal< goal && )
         else
             return false;
     }
@@ -114,7 +118,6 @@ public class CondEx{
         System.out.println("Make benches 0 5 30 is " + ce.makeBenches(0,5,30));
         System.out.println("Make benches 2 6 23 is " + ce.makeBenches(2,6,23));
         System.out.println("Make benches 3 2 23 is " + ce.makeBenches(3,2,23));
-
 
     }
 }
