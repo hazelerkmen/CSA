@@ -71,7 +71,9 @@ public class CondEx{
         if (bigTotal > goal && goal%5 <= small){
             return true;
         }
-        if (bigtotal< goal && )
+        if (bigTotal < goal && goal - bigTotal <= small){
+            return true;
+        }
         else
             return false;
     }
