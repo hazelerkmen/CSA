@@ -21,27 +21,24 @@ public class CrapsGame
         point = 0;
         result = -1;
       }
-      if (total==7 || total==11){
+      else if (total==7 || total==11){
         point = 0;
         result = 1;
       }
-      if (total==4 || total==5 || total==6 || total==8 || total==9 || total==10){
+      else if (total>=4 && total<=10){
         point = total;
         result = 0;
       }
     }
-    
-    if (point != 0){
+
+    else{
       if (total==point){
         point = 0;
         result = 1;
       }
-      if (total==7){
+      else if (total==7){
       point = 0;
       result = -1;
-      }
-      if (total!=point && total!=7){
-        result = 0;
       }
     }
     return result;
