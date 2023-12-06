@@ -9,11 +9,14 @@ public class WhileLoops {
         System.out.println(p.sumDigits(5234612));
         System.out.println("\n" + p.howManyYears(111.2,120));
         System.out.println(p.howManyYears(111.2,150));
-     
-        System.out.println("\n" + p.printSum(6));
-        System.out.println(p.printSum(8));
-        System.out.println(p.printSum(11));
-        System.out.println("\n" + p.isPerfectSquare(25));
+        System.out.println("");
+        printSum(6);
+        System.out.println("");
+        printSum(8);
+        System.out.println("");
+        printSum(11);
+        System.out.println("\n");
+        System.out.println(p.isPerfectSquare(25));
         System.out.println(p.isPerfectSquare(144));
         System.out.println(p.isPerfectSquare(26));        
     }
@@ -50,13 +53,17 @@ public class WhileLoops {
         return years;
     }
 
-    public int printSum(int n){
-        int sum = 0;
-        while (n>0){
-            sum+=n;
-            n--;
+    public static void printSum(int n){
+        int sum = 1;
+        int add = 1;
+        System.out.print("1");
+        while (add<n){
+            add++;
+            sum+=add;
+            System.out.print(" + " + add);
         }
-        return sum;
+        System.out.print(" = " + sum);
+        
     }
 
     public boolean isPerfectSquare(int n){
