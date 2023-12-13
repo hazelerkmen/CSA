@@ -1,15 +1,14 @@
 public class Factorial {
     public static void main(String[] args){
         Factorial f = new Factorial();
-        //for (int n=1; n<=20; n++){
-        //    System.out.println(f.calcFactorial(n));
-       //}
-        //double e = f.calcE();
-        //System.out.printf("e is %2.3f\n", e);
-        //double e2 = f.calcEX(1);
+        for (int n=1; n<=20; n++){
+            System.out.println(f.calcFactorial(n));
+       }
+        double e = f.calcE();
+        System.out.printf("e is %2.3f\n", e);
         for (int n=1; n<=5; n++){
             double e2 = f.calcEX(n);
-            System.out.printf("e is %2.3f \n", e2);
+            System.out.printf("e to the power of " + n + " is %2.3f \n", e2);
         }
 
     }
