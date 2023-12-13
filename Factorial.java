@@ -4,16 +4,28 @@ public class Factorial {
         //for (int n=1; n<=20; n++){
         //    System.out.println(f.calcFactorial(n));
        //}
-        double e = f.calcE();
-        System.out.printf("e is %2.3f\n", e);
+        //double e = f.calcE();
+        //System.out.printf("e is %2.3f\n", e);
+        //double e2 = f.calcEX(1);
+        for (int n=1; n<=5; n++){
+            double e2 = f.calcEX(n);
+            System.out.printf("e is %2.3f \n", e2);
+        }
+
     }
 
     public long calcFactorial(int n){
-        int multiply = n-1;
-        long sum = n;
-        while (multiply>1){
-            sum*=multiply;
-            multiply--;
+        long sum;
+        if (n==0){
+            sum = 1;
+        }
+        else{
+            int multiply = n-1;
+            sum = n;
+            while (multiply>1){
+                sum*=multiply;
+                multiply--;
+        }
         }
         return sum;
     }
@@ -32,10 +44,18 @@ public class Factorial {
         return e;
     }
 
-    public double calcEX(){
+    public double calcEX(int x){
         double olde=0.0;
         double e=1.0;
-        int x;
+        int y = 0;
+        int y2 = 1;
+        while (e-olde>0.001){
+            olde+=1.0*Math.pow(x,y)/(calcFactorial(y));
+            y++;
+            e+=1.0*Math.pow(x,y2)/(calcFactorial(y2));
+            y2++;
+        }
+        return e;
     }
 
 
