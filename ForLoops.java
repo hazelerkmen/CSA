@@ -42,16 +42,22 @@ public class ForLoops {
 
     public static void sillyNumbers2(){
         for (int i=1; i<=4; i++){
-            for (int j=9; j>=1; j--){
-                System.out.print("9");
+            int repetitions;
+            int number=9;
+            int x=9;
+            for (int count=1; count<=9; count++){
+                for (repetitions=x; repetitions>=1; repetitions--){
+                    System.out.print(number);
+                }
+                x--;
+                number--;
             }
-            for (int k=8; k>=1; k--){
-                System.out.print("8");
-            }
-            for (int l=7; l>=1; l--){
-                System.out.print("7");
-            }
-        System.out.println("");
-        }   
+            System.out.println("");
+        }
+    } 
+    
+    public static void dollarsAndStars(){
+
     }
+
 }
