@@ -12,6 +12,7 @@ public class ForLoops {
         sillyNumbers();
         System.out.println("");
         sillyNumbers2();
+        System.out.println("");
         dollarsAndStars();
     }
 
@@ -59,26 +60,10 @@ public class ForLoops {
     
     public static void dollarsAndStars(){
 //doing 7 lines of code
-//first print 7 $, 14 *, then 7$
-// next print 2*, 6 $, 12 *, then 6$
-        int first=0;
-        int second=7;
-        int third=2*second;
-        for (int i=1; i<=4; i++){
-            int characters;
-            int characters2;
-            for (characters=1; characters<=first; characters+=1){
-                System.out.print("*");
-            }
-            for (characters2=characters; characters2<second; characters2++){
-                System.out.print("$");
-            }
-                
+        for (int i=1; i<=7; i++){
+            for (int j=1; j<=5; j++){ //doing something 5 times per line
 
-            first+=2;
-            second--;
-            System.out.println("");
+            }
         }
     }
-
-}
+}   
