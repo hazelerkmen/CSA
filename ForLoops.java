@@ -59,11 +59,28 @@ public class ForLoops {
     } 
     
     public static void dollarsAndStars(){
-//doing 7 lines of code
+        int repetition=0;
+        int repetition2=7;
         for (int i=1; i<=7; i++){
-            for (int j=1; j<=5; j++){ //doing something 5 times per line
-
+            int repetition3=2*repetition2;            
+            for (int j=repetition; j>0; j--){ 
+                System.out.print("*");
             }
+            for (int j=repetition2; j>0; j--){
+                System.out.print("$");
+            }
+            for (int j=repetition3; j>0; j--){
+                System.out.print("*");
+            }
+            for (int j=repetition2; j>0; j--){
+                System.out.print("$");       
+            }
+            for (int j=repetition; j>0; j--){
+                System.out.print("*");
+            }
+            System.out.println("");
+            repetition+=2;
+            repetition2--;
         }
     }
 }   
