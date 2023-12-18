@@ -39,4 +39,11 @@ public class AdvancedLoops {
             System.out.println("");
         }
     }
+
+    public void isosceles(int height){
+        int characters = 2*height-1;
+        for (i=1; i<=height; i++){
+            
+        }
+    }
 }
