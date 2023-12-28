@@ -3,23 +3,19 @@ public class AdvancedLoops {
         AdvancedLoops al=new AdvancedLoops();
         eights();
         alternate(5);
-        System.out.println("");
         alternate(6);
+        System.out.println("");
+        al.isosceles(5);
     }
 
     public static void eights(){
-        int i;
-        int j;
-        int a;
-        int b=0;
-        for (i=8; i>=2; i-=2){
-            for (a=b; a>0; a--){
+        for (int i=8; i>=2; i-=2){
+            for (int a=(8-i)/2; a>0; a--){
                 System.out.print(" ");
             }
-            for (j=i; j>=1; j--){
+            for (int j=i; j>=1; j--){
                 System.out.print(i);
             }
-            b++;
             System.out.println("");
         }
     }
@@ -38,12 +34,20 @@ public class AdvancedLoops {
             }
             System.out.println("");
         }
+        System.out.println("");
     }
 
     public void isosceles(int height){
-        int characters = 2*height-1;
-        for (i=1; i<=height; i++){
-            
+        int x=1;
+        for (int i=height; i>0; i--){
+            for (int j=(i-1); j>0; j--){
+                System.out.print(" ");
+            }
+            for (int k=1; k<=x; k++){
+                System.out.print(k);
+            }
+            x++;
+            System.out.println("");
         }
     }
 }
