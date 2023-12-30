@@ -6,7 +6,8 @@ public class AdvancedLoops {
         al.alternate(6);
         al.isosceles(5);
         al.isosceles(3);
-       // al.upSideDown(9, 5);
+        al.upSideDown(9, 5);
+        al.upSideDown(5,2);
     }
 
     public void eights(){
@@ -56,14 +57,14 @@ public class AdvancedLoops {
 
     public void upSideDown(int big, int small){
         for (int i=big; i>=small; i--){
-            for (int k=big-i; k>0; k--){
+            for (int j=big-i; j>0; j--){
                 System.out.print(" ");
             }
-            for (int j=i; i>=small; j--){
-                System.out.print(j);
+            for (int k=i; k>=small; k--){
+                System.out.print(k);
             }
-            for (int q=small+1; q<=big; q++){
-                System.out.print(q);
+            for (int h=small+1; h<=i; h++){
+                System.out.print(h);
             }
             System.out.println("");
         }
