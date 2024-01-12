@@ -86,4 +86,8 @@ public class Strings {
         String check = s.substring(s.length()-suffix.length(), s.length());
         return check.equals(suffix);
     }
+
+    public static String removeTag(String s, String tag){
+        
+    }
 }
