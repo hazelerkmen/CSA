@@ -31,6 +31,17 @@ public class Strings {
         System.out.println(endsWith("astronomy", "nom"));
         System.out.println(endsWith("nomy", "astronomy"));
         System.out.println(endsWith("astronomy", "astronomy"));
+
+        System.out.println("\nremoveTag");
+        System.out.println(removeTag("<b>Hello World</b>", "b"));
+        System.out.println(removeTag("<b>Hello World</b>", "head"));
+        System.out.println(removeTag("Hello World</b>", "b"));
+        System.out.println(removeTag("<b>Hello World", "b"));
+        System.out.println(removeTag("</img>Hello World<img>", "img"));
+        System.out.println(removeTag("Happy Birthday <b>Hello World</b>", "b"));
+        System.out.println(removeTag("<title>Hello World</title> Happy Birthday", "title"));
+        System.out.println(removeTag("Happy <b>Hello World</b> Birthday", "b"));
+
     }
 
     public static String scroll(String s){
@@ -88,6 +99,17 @@ public class Strings {
     }
 
     public static String removeTag(String s, String tag){
-        
+        String tag1="<"+tag+">";
+        String check1=s.substring(0,tag1.length());
+        boolean b=tag1.equals(check1);
+        String tag2="</"+tag+">";
+        String check2=s.substring(s.length()-tag2.length());
+        boolean b1=tag2.equals(check2);
+        if (b==false)
+            return s;
+        else if (b1==false)
+            return s;
+        else
+            return s.substring(tag1.length(),s.length()-tag2.length());
     }
 }
