@@ -15,20 +15,21 @@ public class ErrorLog {
 	 */
 	public boolean containsKey(String keyword) {
 		/* part b */
-        String before = description.substring(description.indexOf(keyword)-1, description.indexOf(keyword));
-        String after = description.substring(description.indexOf(keyword)+description.length(), description.indexOf(keyword)+description.length()+1);
-        if (description.indexOf(keyword)!=0){
-            if (before!=" ")
-                return false;
-        }
-        else if (description.substring(description.indexOf(keyword))!=keyword){
-            if (after!=" ")
-                return false;      
-        }
-        else if (before!=" " || after!=" ")
-            return false;
-        else
-            return true;
+        //String before = description.substring(description.indexOf(keyword)-1, description.indexOf(keyword));
+        //String after = description.substring(description.indexOf(keyword)+description.length(), description.indexOf(keyword)+description.length()+1);
+		//String test = description.substring(description.indexOf(keyword)-1,description.indexOf(keyword)+keyword.length()+1);
+		//String correct = " " + keyword + " ";
+
+		if (description.indexOf(keyword)==-1)
+			return false;
+		//if (description.indexOf(keyword)!=0){
+		//	if (description.substring(description.indexOf(keyword)-1,description.indexOf(keyword))!=" ")
+		//		return false; 
+		//}
+		if (description.substring(description.indexOf(keyword),description.length())!=keyword){
+			return false;
+		}
+		return true;
 	}
 	
 	public String getMachineId() { return machineId;}
@@ -55,4 +56,3 @@ public class ErrorLog {
 
 	}
 }
-
