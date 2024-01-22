@@ -15,19 +15,15 @@ public class ErrorLog {
 	 */
 	public boolean containsKey(String keyword) {
 		/* part b */
-        //String before = description.substring(description.indexOf(keyword)-1, description.indexOf(keyword));
-        //String after = description.substring(description.indexOf(keyword)+description.length(), description.indexOf(keyword)+description.length()+1);
-		//String test = description.substring(description.indexOf(keyword)-1,description.indexOf(keyword)+keyword.length()+1);
-		//String correct = " " + keyword + " ";
-
 		if (description.indexOf(keyword)==-1)
 			return false;
-		//if (description.indexOf(keyword)!=0){
-		//	if (description.substring(description.indexOf(keyword)-1,description.indexOf(keyword))!=" ")
-		//		return false; 
-		//}
-		if (description.substring(description.indexOf(keyword),description.length())!=keyword){
-			return false;
+		if (description.indexOf(keyword)!=0){
+			if (description.indexOf(" "+keyword)==-1)
+				return false;
+			}
+		if (description.lastIndexOf(keyword)!=description.length()-keyword.length()){
+			if (description.indexOf(keyword+" ")==-1)
+				return false;
 		}
 		return true;
 	}
