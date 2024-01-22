@@ -44,7 +44,13 @@ public class Sentence {
 	 *
 	 */
 	public void replaceNthTime(String str, int n, String repl) {
-		currSent.findNthTime(str,n);
+		int index = findNthTime(str,n);
+		char c = currSent.charAt(index,index+str.length())
+		if (index!=-1){
+			currSent=currSent.replace()
+		}
+			
+		
 		/*  part b - you must call findNthTime here */
 	}
 
