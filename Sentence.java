@@ -24,13 +24,15 @@ public class Sentence {
 		/* part a */
 		int index=-1;
 		int pos=0;
-		if (currSent.indexOf(str)==-1)
-			return -1;
-		else{
-			for (int time=0; time<n; time++){
-				index=currSent.indexOf(str,pos);
-				pos=index+str.length();
+		int time=0;
+		while (time<n){
+			index=currSent.indexOf(str,pos);
+			if (index==-1){
+				return -1;
 			}
+			else
+				pos=index+str.length();
+				time++;
 		}
 		return index;
 	}
@@ -42,6 +44,7 @@ public class Sentence {
 	 *
 	 */
 	public void replaceNthTime(String str, int n, String repl) {
+		currSent.findNthTime(str,n);
 		/*  part b - you must call findNthTime here */
 	}
 
