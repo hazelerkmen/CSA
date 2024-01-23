@@ -57,18 +57,18 @@ public class Sentence {
 	 */
 	public int findLastTime(String str) {
 		/* part c - you must call findNthTime here */
+		int realIndex=0;
+		int n=0;
+		int n2=1;
 		if (currSent.indexOf(str)==-1)
 			return -1;
 		else{
-			
-				
-			
+			int testIndex=findNthTime(str,1);
 			while (testIndex!=-1){
-				testIndex=findNthTime(str,n);
-				if (testIndex!=-1){
-					realIndex=testIndex;
-					n=testIndex;
-				}
+				n++;
+				realIndex=findNthTime(str,n);
+				n2++;
+				testIndex=findNthTime(str,n2);
 			}
 		}
 		return realIndex;
