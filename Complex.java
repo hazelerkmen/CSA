@@ -1,13 +1,4 @@
 public class Complex {
-    //The Complex class should contain the following:
-//- 2 instance variables (attributes)
-//- 2 constructors (use this to call one from the other)
-// toString() method
-//- abs() method
-//- 2 add methods
-//- 2 mult methods
-//- in main(), 6 complex number instances containing a mix of positive and negative values. 
-//One of the complex should have only a real part and one should have only an imaginary part.
 public static void main(String[] args){
     Complex c1 = new Complex(2,3);
     Complex c2 = new Complex(-4,-5);
@@ -22,6 +13,12 @@ public static void main(String[] args){
     System.out.println(c3.add(c4));
     System.out.println(c5.toString());
     System.out.println(c6.toString());
+    System.out.println(c1.abs());
+    System.out.println(c5.add(c6));
+    System.out.println(c5.multiply(c6));
+    System.out.println(c4.abs());
+    System.out.println(c6.add(1.0));
+    System.out.println(c5.multiply(2.0));
 }
 
 
