@@ -49,13 +49,12 @@ public class CarCharger {
      * @return an optimal start time with 0 <= returned value <= 23
      */
     public int getChargeStartTime(int hours){
-        int costCompare=0;
-        int costTest=0;
         int time=0;
-        for(int i=0; i<24; i++){
-            costTest=getChargingCost(i,hours);
-            if(costTest>costCompare){
-                costCompare=costTest;
+        for(int i=1; i<24; i++){
+            int costOne=getChargingCost(0,hours);
+            int costTwo=getChargingCost(i,hours);
+            if(costTwo<costOne){
+                costOne=costTwo;
                 time=i;
             }
         }
