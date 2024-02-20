@@ -19,8 +19,7 @@ public class CarCharger {
         System.out.println("2 " + cc.getChargeStartTime(2));
         System.out.println("7 " + cc.getChargeStartTime(7));
         System.out.println("30 " + cc.getChargeStartTime(30));
-
-
+        
     }
     public CarCharger(int[] table){
         rateTable = table;
@@ -50,8 +49,8 @@ public class CarCharger {
      */
     public int getChargeStartTime(int hours){
         int time=0;
+        int costOne=getChargingCost(0,hours);
         for(int i=1; i<24; i++){
-            int costOne=getChargingCost(0,hours);
             int costTwo=getChargingCost(i,hours);
             if(costTwo<costOne){
                 costOne=costTwo;
