@@ -56,22 +56,22 @@ public class GradeAverage {
 		int [] s5 = {47, 58, 58, 66, 87, 90,90,90};  // improved, final grade is 89.25
 		
 		GradeAverage sr1 = new GradeAverage(s1);
-		//System.out.println(sr1.mean(1,3));
-		//System.out.println(sr1.showsImprovement());
+		System.out.println(sr1.mean(1,3));
+		System.out.println(sr1.showsImprovement());
 		System.out.println(sr1.finalGrade());
 		GradeAverage sr2 = new GradeAverage(s2);
-		//System.out.println(sr2.mean(2,4));
-		//System.out.println(sr2.showsImprovement());
+		System.out.println(sr2.mean(2,4));
+		System.out.println(sr2.showsImprovement());
 		System.out.println(sr2.finalGrade());
 		GradeAverage sr3 = new GradeAverage(s3);
-		//System.out.println(sr3.mean(0,2));
-		//System.out.println(sr3.showsImprovement());
+		System.out.println(sr3.mean(0,2));
+		System.out.println(sr3.showsImprovement());
 		System.out.println(sr3.finalGrade());
 		GradeAverage sr4 = new GradeAverage(s4);
-		//System.out.println(sr4.showsImprovement());
+		System.out.println(sr4.showsImprovement());
 		System.out.println(sr4.finalGrade());
 		GradeAverage sr5 = new GradeAverage(s5);
-		//System.out.println(sr5.showsImprovement());
+		System.out.println(sr5.showsImprovement());
 		System.out.println(sr5.finalGrade());		
 	}
 
