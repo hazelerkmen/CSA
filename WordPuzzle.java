@@ -24,9 +24,9 @@ public class WordPuzzle {
         /* to be implemented in part a */
         if(blackBoxes[r][c]) return false;
 		if (r==0) return true;
+        else if(blackBoxes[r+1][c]) return true;
         if (c==0) return true;
-		if(blackBoxes[r+1][c]) return true;
-        if(blackBoxes[r][c-1]) return true;
+        else if(blackBoxes[r][c-1]) return true;
 		return false;  
     }
 
@@ -49,16 +49,28 @@ public class WordPuzzle {
      */
     public WordPuzzle(boolean [][] blackBoxes){
         /* to be implemented in part b */
-        Box [][] puzzle1 = new Box[blackBoxes.length][blackBoxes[0].length];
-        puzzle=puzzle1;
-		for (int i =0; i<blackBoxes.length; i++){
-            for (int j=0; j<blackBoxes[0].length; j++){
-                if (toBeLabeled){
-                    num
-                }
+        int n=1;
+        puzzle = new Box[blackBoxes.length][blackBoxes[0].length];
+        for (int r=0; r<blackBoxes.length; r++){
+            for(int c=0; c<blackBoxes[0].length; c++){
+                puzzle[r][c]=new Box(blackBoxes[r][c],0);
             }
         }
-		
+        for(int r=0; r<blackBoxes.length; r++){
+            for(int c=0; c<blackBoxes[0].length; c++){
+                if(toBeLabeled(r,c,blackBoxes)){
+                    puzzle[r][c]=new Box(false,n);
+                    n++;
+                }
+                else if(!blackBoxes[r][c])
+                    puzzle[r][c]=new Box(false,0);
+                else{
+                    puzzle[r][c]=new Box(true,0);
+                }
+
+            }
+        }
+
     }
 
 
