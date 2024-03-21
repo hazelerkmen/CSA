@@ -1,5 +1,3 @@
-package com.company;
-
 public class Box {
     private boolean isBlack;
     private int num;
