@@ -22,11 +22,13 @@ public class WordPuzzle {
      */
     public boolean toBeLabeled(int r, int c, boolean [][] blackBoxes){
         /* to be implemented in part a */
-        if(blackBoxes[r][c]) return false;
-		if (r==0) return true;
-        else if(blackBoxes[r+1][c]) return true;
-        if (c==0) return true;
-        else if(blackBoxes[r][c-1]) return true;
+        if(blackBoxes[r][c]) 
+            return false;
+		if (r==0 || blackBoxes[r-1][c]) 
+            return true;
+        if (c==0 || blackBoxes[r][c-1]) 
+            return true;
+
 		return false;  
     }
 
@@ -67,7 +69,6 @@ public class WordPuzzle {
                 else{
                     puzzle[r][c]=new Box(true,0);
                 }
-
             }
         }
 
