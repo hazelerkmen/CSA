@@ -48,11 +48,10 @@ public class ScantArray {
 
         for(int i=0; i<entries.size(); i++){
             ScantArrayEntry s = entries.get(i);
-            if(s.getRow()==numRows && s.getColumn()==numColumns){
+            if(s.getRow()==row && s.getColumn()==col)
                 return s.getValue();
-            }
         }
-        return 0;    // replace this
+        return 0;
     }
 
     /** Removes a column from the scant array and shifts
@@ -68,13 +67,11 @@ public class ScantArray {
             if(e.getColumn()==col){
                 entries.remove(i);
             }
-            if(e.getColumn()>col){
-                ScantArrayEntry e2 = new ScantArrayEntry(e.getRow(), e.getColumn()-1, e.getValue());
-                entries.set(i,e2);
-            }
+
         }
         numColumns--;
     }
+
 
     /** Allows the ScantArray to be printed.  The
      * result should look like a 2D array.  Entries
@@ -91,21 +88,14 @@ public class ScantArray {
     public String toString(){
         /* part c */
        String s = "";
-        for (int down=0; down<numColumns; down++){
-            for (int across=0; across<entries.size(); across++){
-                ScantArrayEntry element = entries.get(across);
-                if(element.getColumn()==down && element.getRow()==across){
-                    s+=element.getValue() + " ";
-                }
-               else
-                    s+="0 ";
+        for (int down=0; down<numRows; down++){
+            for (int across=0; across<numColumns; across++){
+                s+=getValueAt(down,across);
             }
-            System.out.println("");
+            s+="\n";
         }
-        
-		
-		
         return s;
+
    }
 
     public static void main(String[] args){
