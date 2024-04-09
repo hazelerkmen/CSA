@@ -1,6 +1,8 @@
-public class Haiku{
+public class Haiku extends Poem{
     
-    private int numLines = 3;
+    public Haiku(){
+        super(3);
+    }
 
     public int getSyllables(int k){
         if (k==2){
@@ -10,9 +12,10 @@ public class Haiku{
     }
 
     public void printRhythm(){
-        System.out.println("ta-ta-ta-ta-ta");
-        System.out.println("ta-ta-ta-ta-ta-ta-ta");
-        System.out.println("ta-ta-ta-ta-ta");
+        for(int i=1; i<=3; i++){
+            addTa(getSyllables(i));
+            System.out.println("");
+        }
 
     }
    
